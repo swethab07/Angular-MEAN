@@ -1,0 +1,19 @@
+<ul class="nav nav-tabs">
+  <li><a href="#" [routerLink]="['/login']" *ngIf="!toggleMenuItems">Login</a></li>
+  <li><a href="#" [routerLink]="['/register']" *ngIf="!toggleMenuItems">Register</a></li>
+  <li><a href="#" [routerLink]="['/home']" *ngIf="toggleMenuItems">Home</a></li>
+  <li><a href="#" [routerLink]="['/createpost']" *ngIf="toggleMenuItems">Create Posts</a></li>
+  <li><a href="#" [routerLink]="['/listpost']" *ngIf="toggleMenuItems">List Posts</a></li>
+  <li><a [routerLink]="['/logout']" (click)="logout()" *ngIf="toggleMenuItems">Logout</a></li>
+</ul>
+
+
+<!-- 
+<div class="alert alert-info">
+	<a href="#" [routerLink]="['/login']" class="btn btn-primary" *ngIf="!toggleMenuItems">Login</a>
+	<a href="#" [routerLink]="['/register']" class="btn btn-primary" *ngIf="!toggleMenuItems">Register</a>
+	<a href="#" [routerLink]="['/home']" class="btn btn-primary" *ngIf="toggleMenuItems">Home</a>
+	<a href="#" [routerLink]="['/createpost']" class="btn btn-primary" *ngIf="toggleMenuItems">Create Posts</a>
+	<a href="#" [routerLink]="['/listpost']" class="btn btn-primary" *ngIf="toggleMenuItems">List Posts</a>
+	<a [routerLink]="['/logout']" class="btn btn-danger" (click)="logout()" *ngIf="toggleMenuItems">Logout</a>
+</div> -->

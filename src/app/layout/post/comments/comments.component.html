@@ -1,0 +1,8 @@
+<div class="row">
+	<div class="col-md-8 form-group">
+		<ul>
+			<li *ngFor="let cmnt of view_cmnt">{{cmnt.comment}}
+			<button class="btn btn-danger" (click)="deletecmnt(cmnt)">Delete</button></li>
+		</ul>
+	</div>
+</div>

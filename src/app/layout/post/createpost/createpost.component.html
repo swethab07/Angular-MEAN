@@ -1,0 +1,14 @@
+<div class="panel panel-primary">
+	<div class="panel panel-heading">Create Post</div>
+		<div class="panel panel-body">
+			<div class="form-group">
+				<label>Post Title</label>
+				<input type="text" name="" placeholder="title" class="form-control" [(ngModel)]="title">
+			</div>
+			<div class="form-group">
+				<label>Post Description</label>
+				<input type="text" placeholder="description" class="form-control" [(ngModel)]="description"> 
+			</div>
+			<button class="btn btn-success" (click)= "post()">Post</button>
+		</div>	
+</div>

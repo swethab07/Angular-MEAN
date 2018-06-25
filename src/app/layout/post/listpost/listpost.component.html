@@ -1,0 +1,51 @@
+<h1>Posts</h1>
+<div class="container">
+<div class="panel panel-info" *ngFor="let post of posts">
+	<div class="panel panel-heading">**{{post.username}}**</div>
+		<div class="panel panel-body" >
+			<div class="row">
+				<div style="float: right;">
+					<a [routerLink]="['/editpost', post._id]" class="btn btn-success">Edit</a>
+					<button class="btn btn-danger" (click)="delete(post)">Delete</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 form-group">
+					<a [routerLink]="['/viewpost', post._id]">Title: {{post.title}}</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 form-group">
+					<label>Description: {{post.description}}</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<button class="btn btn-info" *ngIf="!like.togglelikes" (click)= "like.like(post)">
+			          	<span class="glyphicon glyphicon-thumbs-up"></span> Like
+			        </button>
+			        <button class="btn btn-info" *ngIf="like.togglelikes
+			        " (click)= "like.unlike(post)">
+			          	<span class="glyphicon glyphicon-thumbs-up"></span> Unlike
+			        </button>
+					<button type="button" class="btn btn-default btn-success" (click)="cmnt.toggle(post)">
+		          		<span class="glyphicon glyphicon-comment"></span> Comment
+		        	</button>
+		        	<app-like #like></app-like>
+	        	</div>
+        	</div>
+        	<div class="row" *ngIf="cmnt.togglecmnts">
+		        <div class="col-md-12 form-group" style="margin-top: 10px">
+		        	<div class="col-md-8">
+						<input type="text" name="comment" onfocus="this.value=''" placeholder="comment" class="form-control"  [(ngModel)]="cmnt.data">
+					</div>
+					<div class="col-md-4">
+						<button class="btn btn-outline-primary" (click)= "cmnt.comments(post)">Comment</button>
+					</div>
+				</div>
+			</div>	
+		<app-comments #cmnt></app-comments>
+		</div>
+</div>
+
+
